@@ -22,19 +22,14 @@ function Game() {
       }
       else{
         if(card.name == flipped.name && card.id != flipped.id){
-          //setCards(cards.map((card) => card.id === id ? {...card, isButtonDisabled: true}: card))
-          //setCards(cards.map((card) => card.id === flipped.id ? {...card, isButtonDisabled: true}: card))
           setFlipped(null)
         }
         else if(card.name != flipped.name){
-          //setCards(cards.map((card)=> true? {...card, isButtonDisabled: true}: card))
           setTimeout(() => {
             setCards(cards.map((card) => card.id === id ? {...card, isFlipped: false}: card));
             setCards(cards.map((card) => card.id === flipped.id ? {...card, isFlipped: false}: card));
             setFlipped(null);
-            //setCards(cards.map((card)=> card.isButtonDisabled? {...card, isButtonDisabled: false}: card));
-            //setCards(cards.map((card) => (!card.isButtonDisabled)? {...card, isButtonDisabled: true}: card))
-          } , 1000)
+           } , 500)
           
         }        
       }
